@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f8e9;
+  color: #1b3a1d;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 24px 16px;
+}
+
+/* ---------- Navbar ---------- */
+header {
+  background: #1b5e20;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin-top: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+nav a {
+  color: #dcedc8;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+
+nav a:hover,
+nav a.active {
+  color: white;
+  border-bottom: 2px solid #aed581;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: #1b5e20;
+  color: #dcedc8;
+  text-align: center;
+  padding: 14px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- Cards, forms, buttons ---------- */
+.card {
+  max-width: 480px;
+  margin: 20px auto;
+  padding: 28px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px #00000020;
+}
+
+.card h2 {
+  text-align: center;
+  color: #1b5e20;
+}
+
+.center {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #c5e1a5;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #aed581;
+  border-color: #2e7d32;
+}
+
+small {
+  display: block;
+  color: #c62828;
+  margin-top: 5px;
+}
+
+button,
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 18px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover,
+.button:hover {
+  background: #1b5e20;
+}
+
+button {
+  width: 100%;
+}
+
+button:disabled {
+  background: #9e9e9e;
+  cursor: not-allowed;
+}
+
+.success {
+  color: #2e7d32;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ---------- Login page (responsive) ---------- */
+.login-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 820px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px #00000020;
+}
+
+.login-side {
+  background: #388e3c;
+  color: white;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.login-side h2 {
+  color: white;
+}
+
+.login-emoji {
+  font-size: 70px;
+  text-align: center;
+}
+
+.login-form {
+  padding: 32px;
+}
+
+.login-form h2 {
+  text-align: center;
+  color: #1b5e20;
+  margin-top: 0;
+}
+
+/* Shows which layout is active - handy for screenshots */
+.screen-badge {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: #558b2f;
+}
+
+.screen-badge::after {
+  content: "Desktop view";
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .login-wrap {
+    max-width: 640px;
+  }
+
+  .login-side {
+    padding: 30px 16px;
+  }
+
+  .login-emoji {
+    font-size: 54px;
+  }
+
+  .screen-badge::after {
+    content: "Tablet view";
+  }
+}
+
+/* Mobile - side panel moves above the form */
+@media (max-width: 600px) {
+  .login-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .login-side {
+    padding: 20px 16px;
+  }
+
+  .login-form {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  nav {
+    gap: 8px 16px;
+  }
+
+  .screen-badge::after {
+    content: "Mobile view";
+  }
+}
+
+/* ---------- Student details page ---------- */
+.students {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.students .card {
+  flex: 1 1 340px;
+  margin: 12px 0;
+}
+
+.preview p {
+  margin: 8px 0;
+}
+
+.bar {
+  background: #e0e0e0;
+  border-radius: 8px;
+  height: 14px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  background: #43a047;
+  height: 100%;
+  transition: width 0.3s;
+}
